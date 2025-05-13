@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ficha de RPG</title>
+    <link rel="stylesheet" href="estilo.css" />
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#8e6e53" />
+</head>
+
+<body>
+    <div class="ficha">
+        <h1>Ficha de Personagem</h1>
+
+        <div class="tabs">
+            <button onclick="mostrarAba('identidade')">Identidade</button>
+            <button onclick="mostrarAba('atributos')">Atributos</button>
+            <button onclick="mostrarAba('habilidades')">Habilidades</button>
+            <button onclick="mostrarAba('pericias')">Perícias</button>
+            <button onclick="mostrarAba('historico')">Histórico</button>
+            <button onclick="mostrarAba('inventario')">Inventário</button>
+        </div>
+
+        <div id="identidade" class="aba ativa">
+            <h2>Identidade</h2>
+            <button onclick="validarFicha()">Validar Ficha</button>
+            <div id="mensagem-validacao"></div>
+            <button onclick="salvarFicha()">Salvar Ficha</button>
+            <button onclick="carregarFicha()">Carregar Ficha</button>
+            <div id="mensagem-salvar"></div>
+            <label><b>Nome:</b> <input type="text" name="nome" /></label><br /><br />
+            <label><b>Classe:</b> <input type="text" name="classe" /></label><br /><br />
+            <label><b>Raça:</b> <input type="text" name="raca" /></label><br /><br />
+            <label><b>Nível:</b> <input type="number" name="nivel" min="1" /></label><br />
+            <hr />
+        </div>
+
+        <div id="atributos" class="aba">
+            <h2>Atributos</h2>
+            <div class="atributo"><b>Força:</b> <input type="number" name="forca" id="forca"
+                    oninput="atualizarMod('forca')" /> <span class="mod" id="mod-forca">Mod: 0</span></div>
+            <div class="atributo"><b>Destreza:</b> <input type="number" name="destreza" id="destreza"
+                    oninput="atualizarMod('destreza')" /> <span class="mod" id="mod-destreza">Mod: 0</span></div>
+            <div class="atributo"><b>Constituição:</b> <input type="number" name="constituicao" id="constituicao"
+                    oninput="atualizarMod('constituicao')" /> <span class="mod" id="mod-constituicao">Mod: 0</span>
+            </div>
+            <div class="atributo"><b>Inteligência:</b> <input type="number" name="inteligencia" id="inteligencia"
+                    oninput="atualizarMod('inteligencia')" /> <span class="mod" id="mod-inteligencia">Mod: 0</span>
+            </div>
+            <div class="atributo"><b>Sabedoria:</b> <input type="number" name="sabedoria" id="sabedoria"
+                    oninput="atualizarMod('sabedoria')" /> <span class="mod" id="mod-sabedoria">Mod: 0</span></div>
+            <div class="atributo"><b>Carisma:</b> <input type="number" name="carisma" id="carisma"
+                    oninput="atualizarMod('carisma')" /> <span class="mod" id="mod-carisma">Mod: 0</span></div>
+        </div>
+
+        <div id="habilidades" class="aba">
+            <h2>Habilidades Especiais</h2>
+            <textarea name="habilidades" rows="4" placeholder="Descreva talentos, magias, etc."></textarea>
+        </div>
+
+        <div id="pericias" class="aba">
+            <h2>Perícias</h2>
+            <textarea name="pericias" rows="4" placeholder="Acrobacia, Furtividade, História, etc."></textarea>
+        </div>
+
+        <div id="historico" class="aba">
+            <h2>Histórico</h2>
+            <textarea name="historico" rows="4" placeholder="Biografia, eventos marcantes, etc."></textarea>
+        </div>
+
+        <div id="inventario" class="aba">
+            <h2>Inventário</h2>
+            <textarea name="inventario" rows="5" placeholder="Armas, itens, etc."></textarea>
+        </div>
+
+        <div class="dados">
+            <h2>Rolagem de Dados</h2>
+            <div class="botoes-dados">
+                <button onclick="rolarDadoComMod(4)">🎲 d4</button>
+                <button onclick="rolarDadoComMod(6)">🎲 d6</button>
+                <button onclick="rolarDadoComMod(8)">🎲 d8</button>
+                <button onclick="rolarDadoComMod(10)">🎲 d10</button>
+                <button onclick="rolarDadoComMod(12)">🎲 d12</button>
+                <button onclick="rolarDadoComMod(20)">🎲 d20</button>
+                <button onclick="rolarDadoComMod(100)">🎲 d100</button>
+            </div>
+            <label for="atributo-select">Modificador:</label>
+            <select id="atributo-select">
+                <option value="">Nenhum</option>
+                <option value="forca">Força</option>
+                <option value="destreza">Destreza</option>
+                <option value="constituicao">Constituição</option>
+                <option value="inteligencia">Inteligência</option>
+                <option value="sabedoria">Sabedoria</option>
+                <option value="carisma">Carisma</option>
+            </select>
+            <div id="resultado-dado">Resultado: -</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

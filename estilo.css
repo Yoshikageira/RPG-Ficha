@@ -1,0 +1,86 @@
+body {
+    font-family: sans-serif;
+    background: #fffdf5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .ficha {
+    max-width: 800px;
+    margin: auto;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .tabs button {
+    padding: 8px 12px;
+    background-color: #e0d3b8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #3e1f0e;
+  }
+  
+  .tabs button:hover {
+    background-color: #d2c3a1;
+  }
+  
+  .aba {
+    display: none;
+  }
+  
+  .aba.ativa {
+    display: block;
+  }
+  
+  .atributo {
+    margin-bottom: 10px;
+  }
+  
+  input, textarea, select {
+    width: 100%;
+    padding: 6px;
+    margin-top: 4px;
+    font-size: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: #fffdf5;
+  }
+  
+  .dados {
+    margin-top: 30px;
+    padding: 15px;
+    border-top: 2px solid #ccc;
+  }
+  
+  .botoes-dados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .botoes-dados button {
+    padding: 8px 12px;
+    background-color: #c5e2f2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .botoes-dados button:hover {
+    background-color: #a6d4ec;
+  }
+  
+  #resultado-dado {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
