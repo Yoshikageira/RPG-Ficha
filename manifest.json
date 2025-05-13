@@ -1,0 +1,20 @@
+{
+    "name": "Ficha de RPG",
+    "short_name": "FichaRPG",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#fdf6e3",
+    "theme_color": "#8e6e53",
+    "icons": [
+        {
+            "src": "icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
